@@ -1,8 +1,12 @@
 import patients_data from '../../data/patients_data.json';
 import { Patient, NewPatient, PatientWithoutSsn } from '../types';
-//import toNewPatient from '../utils';
+import toNewPatient from '../utils';
 
-const data: Array<Patient> = patients_data; //json-tiedosto tyypitetään taulukoksi, jossa on Patient-tyyppiä olevia olioita
+const data: Array<Patient> = patients_data.map(obj => {
+    const object = toNewPatient(obj) as Patient
+    object.id = obj.id
+    return object
+}); //json-tiedosto tyypitetään taulukoksi, jossa on Patient-tyyppiä olevia olioita
 
 const generateId = (length: number) => {
     var result           = '';
