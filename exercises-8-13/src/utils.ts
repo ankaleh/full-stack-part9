@@ -1,4 +1,4 @@
-import { NewPatient, Gender } from '../src/types'
+import { NewPatient, Gender } from '../src/types';
 
 //parsers:
 const parseDate = (date: any): string => {
