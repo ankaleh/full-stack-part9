@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Button } from "semantic-ui-react";
 import { Formik, Form } from "formik";
 
@@ -12,17 +12,17 @@ import HealthCheck from './HealthCheck';
 
 
 export type EntryFormValues =  Omit<OccupationalHealthcareEntry, 'id'>
-| Omit<HospitalEntry, "id"> | Omit<HealthCheckEntry, "id">  ///koska id luodaan palvelimella
+| Omit<HospitalEntry, "id"> | Omit<HealthCheckEntry, "id">;  ///koska id luodaan palvelimella
 
 export interface Props {
     onSubmit: (values: EntryFormValues) => void;
     values: Omit<OccupationalHealthcareEntry, 'id'>
-    | Omit<HospitalEntry, "id"> | Omit<HealthCheckEntry, "id">//onCancel: () => void;
+    | Omit<HospitalEntry, "id"> | Omit<HealthCheckEntry, "id">;//onCancel: () => void;
 }
 
 
 const AddEntryForm: React.FC<Props> = ({ onSubmit, values/* onCancel */  }) => {
-    const [{ diagnoses }] = useStateValue()
+    const [{ diagnoses }] = useStateValue();
     
     
 if (values.type==="OccupationalHealthcare") {
@@ -125,7 +125,7 @@ else if (values.type==="Hospital") {
     
     </Formik>
       
-    )
+    );
   }
   else {
     return (
@@ -177,7 +177,7 @@ else if (values.type==="Hospital") {
     </Formik>
       
 
-    )
+    );
   }
 };
 

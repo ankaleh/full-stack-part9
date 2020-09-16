@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Field } from "formik";
 
 import { TextField } from "../AddPatientModal/FormField";
@@ -26,7 +26,7 @@ const OccupationalHealthCheck: React.FC = () => {
                 component={TextField}
             />
         </div>
-    )
-}
+    );
+};
 
 export default OccupationalHealthCheck;

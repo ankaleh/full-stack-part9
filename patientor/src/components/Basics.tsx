@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Field } from "formik";
 
 import { TextField } from "../AddPatientModal/FormField";
@@ -32,8 +32,8 @@ const Basics: React.FC = () => {
             />
             
         </div>
-    )
+    );
 
-}
+};
 
 export default Basics;

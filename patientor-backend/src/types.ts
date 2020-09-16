@@ -33,7 +33,7 @@ export type BaseEntry = {
     date: string,
     specialist: string,
     diagnosisCodes?: Array<Diagnosis['code']>;
-}
+};
 
 export enum HealthCheckRating {
     "Healthy" = 0,

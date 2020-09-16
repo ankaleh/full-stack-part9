@@ -8,7 +8,7 @@ import { Patient } from "../types";
 import { apiBaseUrl } from "../constants";
 import HealthRatingBar from "../components/HealthRatingBar";
 import { useStateValue } from "../state";
-import { setNewPatient } from "../state/reducer"
+import { setNewPatient } from "../state/reducer";
 import { Link } from "react-router-dom";
 
 const PatientListPage: React.FC = () => {
@@ -30,7 +30,7 @@ const PatientListPage: React.FC = () => {
         `${apiBaseUrl}/patients`,
         values
       );
-      dispatch(setNewPatient(newPatient))
+      dispatch(setNewPatient(newPatient));
       //dispatch({ type: "ADD_PATIENT", payload: newPatient });
       closeModal();
     } catch (e) {

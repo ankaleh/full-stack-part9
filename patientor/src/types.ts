@@ -21,12 +21,12 @@ export interface Patient {
 }
 
 export type BaseEntry = {
-  id: string,
-  description: string,
-  date: string,
-  specialist: string,
+  id: string;
+  description: string;
+  date: string;
+  specialist: string;
   diagnosisCodes?: Array<Diagnosis['code']>; //=Diagnosis['code'][]
-}
+};
 
 export enum HealthCheckRating {
   "Healthy" = 0,
@@ -45,7 +45,7 @@ export interface HospitalEntry extends BaseEntry {
   discharge: {
       date: string;
       criteria: string;
-  }
+  };
   
 }
 
@@ -55,7 +55,7 @@ export interface OccupationalHealthcareEntry extends BaseEntry {
   sickLeave?: {
       startDate: string;
       endDate: string;
-  }
+  };
 }
 
 export type Entry =

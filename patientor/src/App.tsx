@@ -5,7 +5,7 @@ import { Button, Divider, Header, Container } from "semantic-ui-react";
 
 import { apiBaseUrl } from "./constants";
 import { useStateValue } from "./state";
-import { setPatientList, setDiagnosisList } from "./state/reducer"
+import { setPatientList, setDiagnosisList } from "./state/reducer";
 import { Patient, Diagnosis } from "./types";
 
 import PatientListPage from "./PatientListPage";
@@ -28,7 +28,7 @@ const App: React.FC = () => {
       }
     };
     fetchDiagnosisList();
-  }, [dispatch])
+  }, [dispatch]);
 
   React.useEffect(() => {
     axios.get<void>(`${apiBaseUrl}/ping`);

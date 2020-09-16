@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Field } from "formik";
 
 import { NumberField } from "../AddPatientModal/FormField";
@@ -17,6 +17,6 @@ const HealthCheck: React.FC = () => {
             />
             
         </div>
-    )
-}
+    );
+};
 export default HealthCheck;

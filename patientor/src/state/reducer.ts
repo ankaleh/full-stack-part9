@@ -17,7 +17,7 @@ export type Action =
   | { 
     type: "SET_DIAGNOSIS_LIST";
     payload: Diagnosis[];
-  }
+  };
 
 
 export const setPatientList = (patientListFromApi: Patient[]): Action => {

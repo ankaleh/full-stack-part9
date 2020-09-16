@@ -1,5 +1,5 @@
 import React/* , { useEffect } */ from 'react';
-import { Entry } from '../types'
+import { Entry } from '../types';
 import { useStateValue } from "../state";
 import { Icon } from 'semantic-ui-react';
 
@@ -14,17 +14,17 @@ const EntryPage: React.FC<{entry: Entry}> = ({ entry }) => {
         );
     };
 
-    const getRatingIcon = (rating:number) => {
+    const getRatingIcon = (rating: number) => {
         if (rating===1) {
-            return 'thumbs up'
+            return 'thumbs up';
         } else if (rating===2) {
-            return 'eye'
+            return 'eye';
         } else if (rating===4) {
             return 'thumbs down';
         } else {
             return 'like';
         }
-    }
+    };
 
     const entryStyle = {
         paddingTop: 10,
@@ -32,7 +32,7 @@ const EntryPage: React.FC<{entry: Entry}> = ({ entry }) => {
         border: 'solid',
         borderWidth: 1,
         marginBottom: 5
-    }
+    };
 
     switch (entry.type) {
         case "HealthCheck":
@@ -44,7 +44,7 @@ const EntryPage: React.FC<{entry: Entry}> = ({ entry }) => {
                     <div><i>Diagnosis codes:</i> {entry.diagnosisCodes?.map(code => <li key={code}>{code} {diagnoses[code].name}</li>)}</div>
                     <div>Health check rating: <Icon name={getRatingIcon(entry.healthCheckRating)}/> </div>
                 </div>
-            )
+            );
 
         case "Hospital":
             return (
@@ -57,7 +57,7 @@ const EntryPage: React.FC<{entry: Entry}> = ({ entry }) => {
                     <div>Discharge date: {entry.discharge.date}</div>
                     <div>Discharge criteria: {entry.discharge.criteria} </div>
                 </div>
-            )
+            );
         case "OccupationalHealthcare":
             return (
                 <div style={entryStyle}>
@@ -68,10 +68,10 @@ const EntryPage: React.FC<{entry: Entry}> = ({ entry }) => {
                     <h3><Icon name="battery half"/></h3>
                     <div> Sick leave starts: {entry.sickLeave?.startDate} Sick leave ends: {entry.sickLeave?.endDate} </div>
                 </div>
-            )
+            );
         default:
-            return assertNever(entry)
+            return assertNever(entry);
     }
 
-}
-export default EntryPage
+};
+export default EntryPage;

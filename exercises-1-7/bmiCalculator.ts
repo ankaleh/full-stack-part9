@@ -10,8 +10,8 @@ const parseArgs = (args: Array<string>): ValidArguments => {
     return {
         value1,
         value2
-    }
-}
+    };
+};
 
 export const calculateBmi = (height: number, weight:  number): string => {
     const bmi: number = weight/((height/100.0)*(height/100.0));
@@ -27,14 +27,14 @@ export const calculateBmi = (height: number, weight:  number): string => {
     }
     
 
-}
+};
 
 try {
     const args = parseArgs(process.argv);
     console.log(calculateBmi(args.value1, args.value2));
 
 } catch (e) {
-    console.log('Error: ', e.message)
+    console.log('Error: ', e.message);
 }
 
 /* const height: number = Number(process.argv[2]);

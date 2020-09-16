@@ -20,28 +20,28 @@ const parseArguments = (args: Array<string>): ValidArgs => {
     let arrayIndex = 0;
     for (let i = 3; i<args.length; i++) {
         if (!isNaN(Number(args[i]))) {
-            arrayOfNumbers[arrayIndex] = Number(args[i])
+            arrayOfNumbers[arrayIndex] = Number(args[i]);
             arrayIndex++;
         } else {
             throw new Error('Provided values were not numbers!');
         }
-    };
+    }
 
     if (!isNaN(Number(args[2]))) {
       return {
         array: arrayOfNumbers,
         value: Number(args[2])
-      }
+      };
     } else {
       throw new Error('Provided values were not numbers!');
     }
-  }
+  };
   
 export const calculateExercises = (hours: Array<number>, target: number): Result => {
     const periodLength = hours.length;
-    const trainingDays = hours.filter(e => e > 0).length
+    const trainingDays = hours.filter(e => e > 0).length;
     const average: number = hours.reduce((sum, element) => {
-       return sum + element}, 0) 
+       return sum + element;}, 0) 
        / periodLength;
     
     const checkSuccess = () => {
@@ -49,7 +49,7 @@ export const calculateExercises = (hours: Array<number>, target: number): Result
         return true;
         }
         return false;
-    }
+    };
     const success = checkSuccess();
 
     const rate = () => {
@@ -66,11 +66,11 @@ export const calculateExercises = (hours: Array<number>, target: number): Result
 
     const describe = () => {
         if (rating===3) {
-            return 'Well done!'
+            return 'Well done!';
         } else if (rating===2) {
-            return 'Not too bad but could be better!'
+            return 'Not too bad but could be better!';
         } else {
-            return 'Try more!'
+            return 'Try more!';
         }
     };
 
@@ -86,8 +86,8 @@ export const calculateExercises = (hours: Array<number>, target: number): Result
         target,
         average
 
-    }
-}
+    };
+};
 /* const target: number = Number(process.argv[2]);
 
 const array: Array<number> = [];
