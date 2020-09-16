@@ -1,14 +1,16 @@
 import React, { createContext, useContext, useReducer } from "react";
-import { Patient } from "../types";
+import { Patient, Diagnosis } from "../types";
 
 import { Action } from "./reducer";
 
 export type State = {
   patients: { [id: string]: Patient };
+  diagnoses: { [code: string]: Diagnosis };
 };
 
 const initialState: State = {
-  patients: {}
+  patients: {},
+  diagnoses: {},              
 };
 
 export const StateContext = createContext<[State, React.Dispatch<Action>]>([
@@ -21,7 +23,7 @@ type StateProviderProps = {
   children: React.ReactElement;
 };
 
-export const StateProvider: React.FC<StateProviderProps> = ({
+export const StateProvider: React.FC<StateProviderProps> = ({ //props
   reducer,
   children
 }: StateProviderProps) => {
@@ -29,7 +31,9 @@ export const StateProvider: React.FC<StateProviderProps> = ({
   return (
     <StateContext.Provider value={[state, dispatch]}>
       {children}
-    </StateContext.Provider>
-  );
+    </StateContext.Provider> //funktio palauttaa StateContext-kontekstin 
+  ); //Providerin ('toimittaja, tarjoilija') eli StateContext.Provider-komponentin, jonka lapset (eli tässä tapauksessa App ja 
+    //Appiin importatut komponentit ja näiden lapset?) renderöidään uudelleen aina, kun value-propsin arvo muuttuu
 };
+
 export const useStateValue = () => useContext(StateContext);
